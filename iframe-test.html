@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iFrame Test</title>
+    <script src="https://terrific.live/register-embeddable.js"></script>
+    <script src="https://terrific-live-shoppable-video.web.app/sdk.js"></script>
 </head>
 <body>
     <h1>Testing iFrame Embedding</h1>
-    <iframe src="https://terrific.live/PriceShoes" width="100%" height="800px" style="border: none"></iframe>
+    <terrific-shoppable-video embed-id="p8vUSN8Qby9LCZ370K9V" style=""></terrific-shoppable-video>
+    <iframe src="https://terrific.live/PriceShoes" width="100%" style="border: none; height: 80vh;"></iframe>
+<script src="https://terrific-staging-sdk.web.app/analytics-sdk.min.js"></script>
+<script>
+    export default {
+      name: "TerrificDemo",
+      mounted() {
+        const customClientScript: HTMLScriptElement = document.createElement('script');
+        customClientScript.src = `${host}/customers-flowery.js`;
+        document.head.appendChild(customClientScript);
+        customClientScript.onload = () => {
+          console.log('[Terrific]: Custom client script loaded successfully.');
+          const registerScript: HTMLScriptElement = document.createElement('script');
+          registerScript.src = `${host}/register-embeddable.js`;
+          document.head.appendChild(registerScript);
+        }
+      },
+    };
+    </script>
 </body>
 </html>
